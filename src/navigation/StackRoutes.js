@@ -9,7 +9,7 @@ import DrawerRoutes from './DrawerRoutes';
 
 import RomanceScreen from '../screens/RomanceScreens';
 
-import MovieDetailScreen
+import MovieScreen
 from '../screens/MovieScreens';
 
 const Stack = createNativeStackNavigator();
@@ -39,7 +39,7 @@ export default function StackRoutes() {
 
       <Stack.Screen
         name="MovieDetail"
-        component={MovieScreens}
+        component={MovieScreen}
       />
 
     </Stack.Navigator>

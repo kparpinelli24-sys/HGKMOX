@@ -11,13 +11,11 @@ import {
 export default function ProfileScreen() {
   return (
     <ScrollView style={styles.container}>
-
       <Text style={styles.title}>
         CRIAR UM PERFIL
       </Text>
 
       <View style={styles.profileRow}>
-
         <View style={styles.avatar}>
           <Text style={styles.avatarText}>◯</Text>
           <Text style={styles.avatarText}>◯</Text>
@@ -28,14 +26,12 @@ export default function ProfileScreen() {
 
           <TextInput
             style={styles.input}
-            value="Karen Parpinelli"
+            defaultValue="Karen Parpinelli"
           />
         </View>
-
       </View>
 
       <View style={styles.colorsContainer}>
-
         <View style={[styles.color, { backgroundColor: '#ff00aa' }]} />
 
         <View style={[styles.color, { backgroundColor: '#00e5c3' }]} />
@@ -48,15 +44,15 @@ export default function ProfileScreen() {
           style={[
             styles.color,
             styles.selectedColor,
-            { backgroundColor: '#8b0000' }
+            { backgroundColor: '#8b0000' },
           ]}
         />
-
       </View>
 
       <View style={styles.cardInfo}>
         <Text style={styles.cardText}>
-          Use nosso aplicativo para dispositivos móveis para carregar uma foto ou escolher um personagem que mais goste!
+          Use nosso aplicativo para dispositivos móveis para carregar uma foto
+          ou escolher um personagem que mais goste!
         </Text>
       </View>
 
@@ -73,15 +69,13 @@ export default function ProfileScreen() {
       </TouchableOpacity>
 
       <Text style={styles.footer}>
-        © 2026 WarnerMedia Direct, LLC. Todos os direitos reservados.
+      © 2026 HGKMOX. Todos os direitos reservados.
       </Text>
-
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     backgroundColor: '#4d0000',
@@ -199,5 +193,4 @@ const styles = StyleSheet.create({
     marginTop: 80,
     marginBottom: 20,
   },
-
 });

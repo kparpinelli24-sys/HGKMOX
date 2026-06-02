@@ -80,7 +80,7 @@ export default function HomeScreen({ navigation }) {
       </ScrollView>
 
       <Text style={styles.footer}>
-        © 2026 WarnerMedia Direct, LLC. Todos os direitos reservados.
+      © 2026 HGKMOX. Todos os direitos reservados.
       </Text>
 
     </ScrollView>

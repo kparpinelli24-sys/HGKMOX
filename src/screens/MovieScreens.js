@@ -8,20 +8,20 @@ import {
   ScrollView,
 } from 'react-native';
 
-export default function MovieScreens({ route }) {
-
-  const { titulo, imagem } = route.params;
+export default function MovieScreen({ route }) {
+  const titulo = route?.params?.titulo || 'Filme';
+  const imagem =
+    route?.params?.imagem ||
+    'https://via.placeholder.com/500x700';
 
   return (
     <ScrollView style={styles.container}>
-
       <Image
         source={{ uri: imagem }}
         style={styles.poster}
       />
 
       <View style={styles.content}>
-
         <Text style={styles.title}>
           {titulo}
         </Text>
@@ -41,15 +41,12 @@ export default function MovieScreens({ route }) {
             ▶ Assistir
           </Text>
         </TouchableOpacity>
-
       </View>
-
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     backgroundColor: '#4d0000',
@@ -96,5 +93,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-
 });

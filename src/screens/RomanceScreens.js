@@ -12,11 +12,10 @@ import diarioPaixao from '../assets/diario.jpg';
 import comoEuEra from '../assets/comoeu.jpg';
 import todosMenosVoce from '../assets/todosmenos.jpg';
 import jogoDoAmor from '../assets/jogomor.jpg';
-import plesmerAcontece from '../assets/Simplesmente.jpg';
+import simplesmenteAcontece from '../assets/Simplesmente.jpg';
 import ideiaDeVoce from '../assets/ideia.jpg';
 
 export default function RomanceScreen({ navigation }) {
-
   const filmes = [
     {
       id: 1,
@@ -40,8 +39,8 @@ export default function RomanceScreen({ navigation }) {
     },
     {
       id: 5,
-      titulo: 'Plesmer Acontece',
-      imagem: plesmerAcontece,
+      titulo: 'Simplesmente Acontece',
+      imagem: simplesmenteAcontece,
     },
     {
       id: 6,
@@ -52,7 +51,6 @@ export default function RomanceScreen({ navigation }) {
 
   return (
     <ScrollView style={styles.container}>
-
       <Text style={styles.title}>
         COMO SUA ESCOLHA FOI
       </Text>
@@ -62,7 +60,6 @@ export default function RomanceScreen({ navigation }) {
       </Text>
 
       <View style={styles.grid}>
-
         {filmes.map((filme) => (
           <TouchableOpacity
             key={filme.id}
@@ -70,29 +67,31 @@ export default function RomanceScreen({ navigation }) {
             onPress={() =>
               navigation.navigate('MovieDetail', {
                 titulo: filme.titulo,
+                imagem: filme.imagem,
               })
             }
           >
             <Image
               source={filme.imagem}
               style={styles.poster}
+              resizeMode="cover"
             />
 
+            <Text style={styles.movieTitle}>
+              {filme.titulo}
+            </Text>
           </TouchableOpacity>
         ))}
-
       </View>
 
       <Text style={styles.footer}>
-        © 2026 WarnerMedia Direct, LLC. Todos os direitos reservados.
+      © 2026 HGKMOX. Todos os direitos reservados.
       </Text>
-
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     backgroundColor: '#4d0000',
@@ -124,7 +123,7 @@ const styles = StyleSheet.create({
 
   card: {
     width: '48%',
-    backgroundColor: '#9c7b7b',
+    backgroundColor: '#7a3d3d',
     borderRadius: 15,
     padding: 10,
     marginBottom: 20,
@@ -136,11 +135,18 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
 
+  movieTitle: {
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 10,
+    fontSize: 14,
+    fontWeight: '600',
+  },
+
   footer: {
     color: '#fff',
     textAlign: 'center',
     fontSize: 10,
     marginVertical: 20,
   },
-
 });
