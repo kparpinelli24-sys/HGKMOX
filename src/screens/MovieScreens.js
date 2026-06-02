@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-export default function MovieDetailScreen({ route }) {
+export default function MovieScreens({ route }) {
 
   const { titulo, imagem } = route.params;
 

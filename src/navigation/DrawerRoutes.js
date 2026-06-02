@@ -3,7 +3,7 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import TabRoutes from './TabRoutes';
-import AboutScreen from '../screens/AboutScreen';
+import AboutScreen from '../screens/SobreScreens';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,7 +18,7 @@ export default function DrawerRoutes() {
 
       <Drawer.Screen
         name="Sobre"
-        component={AboutScreen}
+        component={SobreScreens}
       />
 
     </Drawer.Navigator>

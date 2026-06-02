@@ -3,9 +3,9 @@ import React from 'react';
 import { createBottomTabNavigator }
 from '@react-navigation/bottom-tabs';
 
-import HomeScreen from '../screens/HomeScreen';
-import SearchScreen from '../screens/SearchScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import HomeScreen from '../screens/HomeScreens';
+import SearchScreen from '../screens/SearchScreens';
+import ProfileScreen from '../screens/PerfilScreens';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,7 +25,7 @@ export default function TabRoutes() {
 
       <Tab.Screen
         name="Perfil"
-        component={ProfileScreen}
+        component={PerfilScreen}
       />';
 
     </Tab.Navigator>

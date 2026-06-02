@@ -8,36 +8,53 @@ import {
   Image,
 } from 'react-native';
 
+import diarioPaixao from '../assets/diario.jpg';
+import comoEuEra from '../assets/comoeu.jpg';
+import todosMenosVoce from '../assets/todosmenos.jpg';
+import jogoDoAmor from '../assets/jogomor.jpg';
+import plesmerAcontece from '../assets/Simplesmente.jpg';
+import ideiaDeVoce from '../assets/ideia.jpg';
+
 export default function RomanceScreen({ navigation }) {
 
   const filmes = [
     {
       id: 1,
       titulo: 'Diário de uma Paixão',
-      imagem: 'https://picsum.photos/200/301'
+      imagem: diarioPaixao,
     },
     {
       id: 2,
       titulo: 'Como Eu Era Antes de Você',
-      imagem: 'https://picsum.photos/200/302'
+      imagem: comoEuEra,
     },
     {
       id: 3,
       titulo: 'Todos Menos Você',
-      imagem: 'https://picsum.photos/200/303'
+      imagem: todosMenosVoce,
     },
     {
       id: 4,
       titulo: 'O Jogo do Amor',
-      imagem: 'https://picsum.photos/200/304'
-    }
+      imagem: jogoDoAmor,
+    },
+    {
+      id: 5,
+      titulo: 'Plesmer Acontece',
+      imagem: plesmerAcontece,
+    },
+    {
+      id: 6,
+      titulo: 'Uma Ideia de Você',
+      imagem: ideiaDeVoce,
+    },
   ];
 
   return (
     <ScrollView style={styles.container}>
 
       <Text style={styles.title}>
-        Como sua escolha foi
+        COMO SUA ESCOLHA FOI
       </Text>
 
       <Text style={styles.subTitle}>
@@ -47,32 +64,28 @@ export default function RomanceScreen({ navigation }) {
       <View style={styles.grid}>
 
         {filmes.map((filme) => (
-
           <TouchableOpacity
             key={filme.id}
             style={styles.card}
             onPress={() =>
               navigation.navigate('MovieDetail', {
                 titulo: filme.titulo,
-                imagem: filme.imagem
               })
             }
           >
-
             <Image
-              source={{ uri: filme.imagem }}
+              source={filme.imagem}
               style={styles.poster}
             />
 
-            <Text style={styles.movieTitle}>
-              {filme.titulo}
-            </Text>
-
           </TouchableOpacity>
-
         ))}
 
       </View>
+
+      <Text style={styles.footer}>
+        © 2026 WarnerMedia Direct, LLC. Todos os direitos reservados.
+      </Text>
 
     </ScrollView>
   );
@@ -83,20 +96,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#4d0000',
-    padding: 20,
+    paddingTop: 50,
+    paddingHorizontal: 10,
   },
 
   title: {
     color: '#fff',
-    fontSize: 20,
     textAlign: 'center',
-    marginTop: 20,
+    fontSize: 18,
+    marginBottom: 5,
+    letterSpacing: 1,
   },
 
   subTitle: {
     color: '#fff',
-    fontSize: 28,
     textAlign: 'center',
+    fontSize: 28,
     marginBottom: 30,
     fontWeight: 'bold',
   },
@@ -109,7 +124,7 @@ const styles = StyleSheet.create({
 
   card: {
     width: '48%',
-    backgroundColor: '#6b2c2c',
+    backgroundColor: '#9c7b7b',
     borderRadius: 15,
     padding: 10,
     marginBottom: 20,
@@ -118,13 +133,14 @@ const styles = StyleSheet.create({
   poster: {
     width: '100%',
     height: 220,
-    borderRadius: 10,
+    borderRadius: 12,
   },
 
-  movieTitle: {
+  footer: {
     color: '#fff',
     textAlign: 'center',
-    marginTop: 10,
+    fontSize: 10,
+    marginVertical: 20,
   },
 
 });

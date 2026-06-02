@@ -3,8 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
   TouchableOpacity,
+  TextInput,
   ScrollView,
 } from 'react-native';
 
@@ -12,48 +12,69 @@ export default function ProfileScreen() {
   return (
     <ScrollView style={styles.container}>
 
-      <View style={styles.profileContainer}>
+      <Text style={styles.title}>
+        CRIAR UM PERFIL
+      </Text>
 
-        <Image
-          source={{
-            uri: 'https://i.pravatar.cc/300'
-          }}
-          style={styles.avatar}
-        />
+      <View style={styles.profileRow}>
 
-        <Text style={styles.name}>
-          Usuário Exemplo
-        </Text>
+        <View style={styles.avatar}>
+          <Text style={styles.avatarText}>◯</Text>
+          <Text style={styles.avatarText}>◯</Text>
+        </View>
 
-        <Text style={styles.email}>
-          usuario@email.com
-        </Text>
+        <View style={styles.info}>
+          <Text style={styles.label}>Nome:</Text>
+
+          <TextInput
+            style={styles.input}
+            value="Karen Parpinelli"
+          />
+        </View>
 
       </View>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>
-          Editar Perfil
+      <View style={styles.colorsContainer}>
+
+        <View style={[styles.color, { backgroundColor: '#ff00aa' }]} />
+
+        <View style={[styles.color, { backgroundColor: '#00e5c3' }]} />
+
+        <View style={[styles.color, { backgroundColor: '#ffb347' }]} />
+
+        <View style={[styles.color, { backgroundColor: '#6f2cff' }]} />
+
+        <View
+          style={[
+            styles.color,
+            styles.selectedColor,
+            { backgroundColor: '#8b0000' }
+          ]}
+        />
+
+      </View>
+
+      <View style={styles.cardInfo}>
+        <Text style={styles.cardText}>
+          Use nosso aplicativo para dispositivos móveis para carregar uma foto ou escolher um personagem que mais goste!
+        </Text>
+      </View>
+
+      <TouchableOpacity style={styles.saveButton}>
+        <Text style={styles.saveText}>
+          SALVAR
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>
-          Favoritos
+      <TouchableOpacity style={styles.cancelButton}>
+        <Text style={styles.cancelText}>
+          CANCELAR
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>
-          Configurações
-        </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.logoutButton}>
-        <Text style={styles.logoutText}>
-          Sair
-        </Text>
-      </TouchableOpacity>
+      <Text style={styles.footer}>
+        © 2026 WarnerMedia Direct, LLC. Todos os direitos reservados.
+      </Text>
 
     </ScrollView>
   );
@@ -67,56 +88,116 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  profileContainer: {
-    alignItems: 'center',
-    marginTop: 50,
+  title: {
+    color: '#fff',
+    fontSize: 28,
+    textAlign: 'center',
+    marginTop: 40,
     marginBottom: 40,
+    letterSpacing: 2,
+  },
+
+  profileRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 30,
   },
 
   avatar: {
-    width: 140,
-    height: 140,
-    borderRadius: 70,
-    marginBottom: 15,
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    borderWidth: 1,
+    borderColor: '#552222',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
-  name: {
+  avatarText: {
+    color: '#777',
+    fontSize: 22,
+  },
+
+  info: {
+    flex: 1,
+    marginLeft: 20,
+  },
+
+  label: {
     color: '#fff',
-    fontSize: 28,
-    fontWeight: 'bold',
+    marginBottom: 5,
   },
 
-  email: {
-    color: '#ddd',
-    fontSize: 16,
-    marginTop: 5,
+  input: {
+    color: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#888',
+    paddingVertical: 5,
   },
 
-  button: {
-    backgroundColor: '#6b2c2c',
+  colorsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 30,
+  },
+
+  color: {
+    width: 35,
+    height: 35,
+    borderRadius: 20,
+  },
+
+  selectedColor: {
+    borderWidth: 2,
+    borderColor: '#fff',
+  },
+
+  cardInfo: {
+    backgroundColor: '#5a0000',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 40,
+  },
+
+  cardText: {
+    color: '#fff',
+    fontSize: 14,
+    lineHeight: 22,
+  },
+
+  saveButton: {
+    borderWidth: 1,
+    borderColor: '#fff',
     padding: 18,
-    borderRadius: 15,
-    marginBottom: 15,
+    borderRadius: 12,
+    alignItems: 'center',
+    marginBottom: 20,
   },
 
-  buttonText: {
+  saveText: {
     color: '#fff',
-    fontSize: 18,
-    textAlign: 'center',
+    fontSize: 22,
+    letterSpacing: 2,
   },
 
-  logoutButton: {
-    backgroundColor: '#220000',
+  cancelButton: {
+    backgroundColor: '#7a4a4a',
     padding: 18,
-    borderRadius: 15,
-    marginTop: 30,
+    borderRadius: 12,
+    alignItems: 'center',
   },
 
-  logoutText: {
+  cancelText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 20,
+  },
+
+  footer: {
+    color: '#fff',
+    fontSize: 10,
     textAlign: 'center',
-    fontWeight: 'bold',
+    marginTop: 80,
+    marginBottom: 20,
   },
 
 });

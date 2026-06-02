@@ -5,39 +5,56 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Image,
   ScrollView,
-  Image
 } from 'react-native';
+
+import romance1 from '../assets/diario.jpg';
+import romance2 from '../assets/comoeu.jpg';
+import romance3 from '../assets/todosmenos.jpg';
+import romance4 from '../assets/jogomor.jpg';
+import romance5 from '../assets/Simplesmente.jpg';
 
 export default function HomeScreen({ navigation }) {
   return (
     <ScrollView style={styles.container}>
 
       <View style={styles.header}>
-        <Text style={styles.logo}>HGK MOX</Text>
+        <Text style={styles.logo}>
+          HGK MOX
+        </Text>
 
         <TextInput
-          placeholder="Encontre o que procura..."
-          placeholderTextColor="#ddd"
           style={styles.search}
+          placeholder="Encontre o que procurei..."
+          placeholderTextColor="#ccc"
         />
       </View>
 
       <Text style={styles.title}>
         ESCOLHA QUAL SEU ESTILO PREFERIDO
         {'\n'}
-        DE FILMES E SÉRIES
+        DE FILMES E SERIES
       </Text>
 
-      <TouchableOpacity style={styles.category}>
+      <TouchableOpacity
+        style={styles.category}
+        onPress={() => navigation.navigate('Acao')}
+      >
         <Text style={styles.categoryText}>Ação</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.category}>
+      <TouchableOpacity
+        style={styles.category}
+        onPress={() => navigation.navigate('Comedia')}
+      >
         <Text style={styles.categoryText}>Comédia</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.category}>
+      <TouchableOpacity
+        style={styles.category}
+        onPress={() => navigation.navigate('Terror')}
+      >
         <Text style={styles.categoryText}>Terror</Text>
       </TouchableOpacity>
 
@@ -48,47 +65,22 @@ export default function HomeScreen({ navigation }) {
         <Text style={styles.categoryText}>Romance</Text>
       </TouchableOpacity>
 
-      <Text style={styles.sectionTitle}>
-        Destaques
-      </Text>
-
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
+        style={styles.moviesContainer}
       >
 
-        <Image
-          source={{
-            uri: 'https://picsum.photos/200/300'
-          }}
-          style={styles.poster}
-        />
-
-        <Image
-          source={{
-            uri: 'https://picsum.photos/201/300'
-          }}
-          style={styles.poster}
-        />
-
-        <Image
-          source={{
-            uri: 'https://picsum.photos/202/300'
-          }}
-          style={styles.poster}
-        />
-
-        <Image
-          source={{
-            uri: 'https://picsum.photos/203/300'
-          }}
-          style={styles.poster}
-        />
+        <Image source={romance1} style={styles.movie} />
+        <Image source={romance2} style={styles.movie} />
+        <Image source={romance3} style={styles.movie} />
+        <Image source={romance4} style={styles.movie} />
+        <Image source={romance5} style={styles.movie} />
 
       </ScrollView>
 
       <Text style={styles.footer}>
-        © 2026 WarnerMedia Direct, LLC.
+        © 2026 WarnerMedia Direct, LLC. Todos os direitos reservados.
       </Text>
 
     </ScrollView>
@@ -100,67 +92,70 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#4d0000',
     paddingTop: 50,
-    paddingHorizontal: 15,
   },
 
   header: {
-    marginBottom: 30,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 15,
   },
 
   logo: {
     color: '#fff',
-    fontSize: 35,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 15,
   },
 
   search: {
-    backgroundColor: '#7a4a4a',
-    padding: 12,
-    borderRadius: 30,
+    backgroundColor: '#7b5555',
+    width: '65%',
+    height: 45,
+    borderRadius: 25,
+    paddingHorizontal: 15,
     color: '#fff',
   },
 
   title: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 18,
+    marginTop: 30,
     marginBottom: 30,
+    fontSize: 18,
     letterSpacing: 2,
   },
 
   category: {
     backgroundColor: '#650000',
+    marginHorizontal: 15,
+    marginBottom: 20,
     padding: 25,
     borderRadius: 25,
-    marginBottom: 20,
     alignItems: 'center',
   },
 
   categoryText: {
     color: '#fff',
-    fontSize: 28,
+    fontSize: 32,
     fontStyle: 'italic',
   },
 
-  sectionTitle: {
-    color: '#fff',
-    fontSize: 22,
-    marginVertical: 20,
-    fontWeight: 'bold',
+  moviesContainer: {
+    marginTop: 10,
+    paddingLeft: 15,
   },
 
-  poster: {
-    width: 140,
-    height: 220,
-    borderRadius: 15,
-    marginRight: 15,
+  movie: {
+    width: 110,
+    height: 180,
+    borderRadius: 10,
+    marginRight: 10,
   },
 
   footer: {
     color: '#fff',
     textAlign: 'center',
-    marginVertical: 30,
     fontSize: 10,
+    marginVertical: 30,
   },
 });

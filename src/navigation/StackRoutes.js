@@ -3,14 +3,14 @@ import React from 'react';
 import { createNativeStackNavigator }
 from '@react-navigation/native-stack';
 
-import LoginScreen from '../screens/LoginScreen';
+import LoginScreen from '../screens/LoginScreens';
 
 import DrawerRoutes from './DrawerRoutes';
 
-import RomanceScreen from '../screens/RomanceScreen';
+import RomanceScreen from '../screens/RomanceScreens';
 
 import MovieDetailScreen
-from '../screens/MovieDetailScreen';
+from '../screens/MovieScreens';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,7 +39,7 @@ export default function StackRoutes() {
 
       <Stack.Screen
         name="MovieDetail"
-        component={MovieDetailScreen}
+        component={MovieScreens}
       />
 
     </Stack.Navigator>
