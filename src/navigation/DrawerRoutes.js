@@ -1,10 +1,7 @@
 import React from 'react';
-
-import { createDrawerNavigator }
-from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import TabRoutes from './TabRoutes';
-
 import AboutScreen from '../screens/AboutScreen';
 
 const Drawer = createDrawerNavigator();
@@ -14,7 +11,7 @@ export default function DrawerRoutes() {
     <Drawer.Navigator>
 
       <Drawer.Screen
-        name="Início"
+        name="Home"
         component={TabRoutes}
       />
 

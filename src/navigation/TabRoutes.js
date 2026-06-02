@@ -26,7 +26,7 @@ export default function TabRoutes() {
       <Tab.Screen
         name="Perfil"
         component={ProfileScreen}
-      />
+      />';
 
     </Tab.Navigator>
   );
